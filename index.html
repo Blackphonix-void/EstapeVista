@@ -1,0 +1,1278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Discover beautiful destinations, beaches, mountains and cities with EscapeVista.">
+<title>EscapeVista | Discover Your Next Escape</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --blue: #dff5fa;
+    --turquoise: #16a6ad;
+    --dark: #173b45;
+    --white: #ffffff;
+    --text: #53666d;
+    --light: #f4fbfc;
+    --shadow: 0 10px 35px rgba(23, 59, 69, 0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--dark);
+    background: var(--white);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+}
+
+.nav-container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 17px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.logo span {
+    color: var(--turquoise);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--turquoise);
+}
+
+.nav-links a.active {
+    color: var(--turquoise);
+    border-bottom: 2px solid var(--turquoise);
+    padding-bottom: 5px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 27px;
+    cursor: pointer;
+    color: var(--dark);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 80px 20px;
+    background:
+        linear-gradient(rgba(8,35,43,0.38), rgba(8,35,43,0.55)),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=85")
+        center/cover no-repeat;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero-label {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.12;
+    margin-bottom: 22px;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 0 auto 35px;
+    font-size: 17px;
+    color: rgba(255,255,255,0.92);
+}
+
+.search-box {
+    max-width: 650px;
+    margin: auto;
+    display: flex;
+    background: white;
+    border-radius: 50px;
+    padding: 7px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.2);
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 13px 20px;
+    border-radius: 50px;
+    color: var(--dark);
+}
+
+.search-box button {
+    background: var(--turquoise);
+    border: none;
+    color: white;
+    padding: 13px 28px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.search-box button:hover {
+    background: var(--dark);
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 85px 25px;
+}
+
+.section-container {
+    max-width: 1250px;
+    margin: auto;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 45px;
+}
+
+.section-heading .eyebrow {
+    color: var(--turquoise);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+.section-heading h2 {
+    font-size: clamp(32px, 5vw, 46px);
+    margin: 10px 0;
+}
+
+.section-heading p {
+    color: var(--text);
+}
+
+/* CATEGORY BUTTONS */
+
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 35px;
+}
+
+.category-btn {
+    padding: 12px 25px;
+    border: 1px solid #dcebed;
+    background: white;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--dark);
+    transition: 0.3s;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: var(--turquoise);
+    color: white;
+    border-color: var(--turquoise);
+}
+
+/* DESTINATIONS */
+
+.destinations-section {
+    background: var(--light);
+}
+
+.destination-count {
+    text-align: center;
+    color: var(--text);
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.destination-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.destination-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 40px rgba(23,59,69,0.14);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+}
+
+.destination-info {
+    padding: 19px;
+}
+
+.destination-info h3 {
+    font-size: 22px;
+    margin-bottom: 4px;
+}
+
+.destination-info p {
+    color: var(--text);
+    font-size: 13px;
+}
+
+.destination-tag {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--turquoise);
+    background: #e7f8f8;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.destination-details {
+    display: none;
+    padding: 0 19px 20px;
+    color: var(--text);
+    font-size: 13px;
+}
+
+.destination-details.show {
+    display: block;
+}
+
+.destination-details h4 {
+    color: var(--dark);
+    margin: 12px 0 5px;
+}
+
+.destination-details ul {
+    padding-left: 18px;
+}
+
+.destination-details li {
+    margin-bottom: 4px;
+}
+
+.no-results {
+    display: none;
+    text-align: center;
+    padding: 40px;
+    color: var(--text);
+    grid-column: 1 / -1;
+}
+
+.more-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.more-btn {
+    padding: 14px 35px;
+    border: none;
+    background: var(--dark);
+    color: white;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.more-btn:hover {
+    background: var(--turquoise);
+}
+
+/* EXPERIENCES */
+
+.experiences-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.experience-card {
+    min-height: 310px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    padding: 28px;
+    background-size: cover;
+    background-position: center;
+}
+
+.experience-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+}
+
+.experience-card div {
+    position: relative;
+    z-index: 1;
+}
+
+.experience-card h3 {
+    font-size: 26px;
+}
+
+.experience-card p {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* GALLERY */
+
+.gallery-section {
+    background: var(--light);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 13px;
+    transition: transform 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.025);
+}
+
+/* REVIEWS */
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.review-card {
+    padding: 28px;
+    background: var(--light);
+    border-radius: 15px;
+}
+
+.stars {
+    color: #f4b942;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.review-card p {
+    color: var(--text);
+    font-size: 14px;
+}
+
+.review-card h4 {
+    margin-top: 18px;
+}
+
+/* ENQUIRY */
+
+.contact-section {
+    background: var(--light);
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 17px;
+    box-shadow: var(--shadow);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dcebed;
+    border-radius: 8px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--turquoise);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    width: 100%;
+    border: none;
+    padding: 15px;
+    background: var(--turquoise);
+    color: white;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: var(--dark);
+}
+
+.form-message {
+    display: none;
+    text-align: center;
+    margin-top: 15px;
+    color: var(--turquoise);
+    font-weight: 600;
+}
+
+/* FOOTER */
+
+footer {
+    background: #12313a;
+    color: white;
+    padding: 55px 25px 25px;
+}
+
+.footer-container {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.footer-logo span {
+    color: #4bd0d0;
+}
+
+footer p {
+    color: #b8cbd0;
+    font-size: 13px;
+    max-width: 350px;
+}
+
+footer h4 {
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    font-size: 13px;
+    color: #b8cbd0;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.copyright {
+    max-width: 1250px;
+    margin: 40px auto 0;
+    border-top: 1px solid rgba(255,255,255,0.13);
+    padding-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #b8cbd0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+    .destination-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .experiences-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 25px;
+        box-shadow: var(--shadow);
+        gap: 20px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 550px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        border-radius: 15px;
+        gap: 5px;
+    }
+
+    .search-box button {
+        border-radius: 10px;
+    }
+
+    .destination-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .destination-card img {
+        height: 160px;
+    }
+
+    .destination-info {
+        padding: 13px;
+    }
+
+    .destination-info h3 {
+        font-size: 18px;
+    }
+
+    .experiences-grid,
+    .reviews-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid img {
+        height: 230px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 420px) {
+    .destination-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-card img {
+        height: 210px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header class="navbar">
+    <div class="nav-container">
+        <a href="#home" class="logo">Escape<span>Vista</span></a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home" class="active">Home</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#packages">Experiences</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Enquiry</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="hero-label">Discover the world with EscapeVista</div>
+        <h1>Your next adventure starts here.</h1>
+        <p>
+            Explore breathtaking beaches, beautiful mountain landscapes
+            and unforgettable cities around the world.
+        </p>
+
+        <form class="search-box" id="heroSearch">
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Where would you like to go?"
+                aria-label="Search destinations"
+            >
+            <button type="submit">Explore Now</button>
+        </form>
+    </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section class="destinations-section" id="destinations">
+    <div class="section-container">
+
+        <div class="section-heading">
+            <div class="eyebrow">Explore the world</div>
+            <h2>Find Your Perfect Destination</h2>
+            <p>
+                From tropical islands to impressive mountain ranges,
+                discover places worth visiting.
+            </p>
+        </div>
+
+        <div class="category-buttons">
+            <button class="category-btn active" data-category="all">All Destinations</button>
+            <button class="category-btn" data-category="beach">Explore Beaches</button>
+            <button class="category-btn" data-category="mountain">Explore Mountains</button>
+            <button class="category-btn" data-category="city">Explore Cities</button>
+        </div>
+
+        <p class="destination-count" id="destinationCount"></p>
+
+        <div class="destination-grid" id="destinationGrid">
+
+            <!-- Destination cards are generated by JavaScript -->
+
+            <div class="no-results" id="noResults">
+                No destinations found. Try another search.
+            </div>
+
+        </div>
+
+        <div class="more-container">
+            <button class="more-btn" id="moreBtn">Show More Cities</button>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCES -->
+<section id="packages">
+    <div class="section-container">
+
+        <div class="section-heading">
+            <div class="eyebrow">Find your experience</div>
+            <h2>Explore Different Experiences</h2>
+            <p>Discover the kind of holiday that suits your next adventure.</p>
+        </div>
+
+        <div class="experiences-grid">
+
+            <div class="experience-card"
+                style="background-image:url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=80')">
+                <div>
+                    <h3>Beach Escapes</h3>
+                    <p>Relax beside beautiful beaches and turquoise waters.</p>
+                </div>
+            </div>
+
+            <div class="experience-card"
+                style="background-image:url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80')">
+                <div>
+                    <h3>Mountain Adventures</h3>
+                    <p>Discover impressive mountains and natural scenery.</p>
+                </div>
+            </div>
+
+            <div class="experience-card"
+                style="background-image:url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=900&q=80')">
+                <div>
+                    <h3>City Discoveries</h3>
+                    <p>Experience famous landmarks and vibrant city life.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+    <div class="section-container">
+
+        <div class="section-heading">
+            <div class="eyebrow">Travel inspiration</div>
+            <h2>Beautiful Places Around the World</h2>
+            <p>A little inspiration for your next journey.</p>
+        </div>
+
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=80" alt="Tropical beach">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80" alt="Mountain landscape">
+            <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=900&q=80" alt="City skyline">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Beautiful landscape">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80" alt="Mountain lake">
+            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=80" alt="Scenic destination">
+        </div>
+
+    </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+    <div class="section-container">
+
+        <div class="section-heading">
+            <div class="eyebrow">Traveller experiences</div>
+            <h2>What People Say</h2>
+            <p>Travel inspiration from our community.</p>
+        </div>
+
+        <div class="reviews-grid">
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>
+                    "EscapeVista helped me discover beautiful destinations
+                    I had never considered visiting before."
+                </p>
+                <h4>Alex Morgan</h4>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>
+                    "I love how easy it is to explore different places
+                    and get inspiration for future holidays."
+                </p>
+                <h4>Sarah Williams</h4>
+            </div>
+
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p>
+                    "The destination collection makes discovering new
+                    places exciting and simple."
+                </p>
+                <h4>Daniel Smith</h4>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ENQUIRY FORM -->
+<section class="contact-section" id="contact">
+    <div class="section-container">
+
+        <div class="section-heading">
+            <div class="eyebrow">Get in touch</div>
+            <h2>Plan Your Next Escape</h2>
+            <p>Have a destination in mind? Send us an enquiry.</p>
+        </div>
+
+        <form class="contact-form" id="enquiryForm">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="Your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Your email" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input type="text" id="destination" placeholder="Where would you like to go?">
+                </div>
+
+                <div class="form-group">
+                    <label for="holidayType">Holiday Type</label>
+                    <select id="holidayType" required>
+                        <option value="">Choose an experience</option>
+                        <option>Beach Holiday</option>
+                        <option>Mountain Adventure</option>
+                        <option>City Holiday</option>
+                        <option>Nature Escape</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" placeholder="Tell us about your holiday plans..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Enquiry</button>
+
+            <p class="form-message" id="formMessage">
+                Thank you! Your enquiry has been received.
+            </p>
+
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-container">
+
+        <div>
+            <div class="footer-logo">Escape<span>Vista</span></div>
+            <p>
+                Discover beautiful destinations, find travel inspiration
+                and start planning your next escape.
+            </p>
+        </div>
+
+        <div>
+            <h4>Quick Links</h4>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#destinations">Destinations</a>
+                <a href="#packages">Experiences</a>
+                <a href="#gallery">Gallery</a>
+            </div>
+        </div>
+
+        <div>
+            <h4>Explore</h4>
+            <div class="footer-links">
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
+                <a href="#destinations">Find a Destination</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 EscapeVista. All rights reserved.
+    </div>
+</footer>
+
+<script>
+
+/* MOBILE NAVIGATION */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", isOpen);
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+    });
+});
+
+
+/* DESTINATION DATA */
+
+const cityData = [
+    ["Paris","France","Europe","city","The City of Light, famous for its art, architecture and romantic atmosphere.","Eiffel Tower, Louvre Museum, Notre-Dame Cathedral","Explore museums, enjoy French food and walk along the Seine."],
+    ["London","United Kingdom","Europe","city","A historic capital combining royal landmarks with modern attractions.","Big Ben, Tower Bridge, Buckingham Palace","Visit museums, explore markets and enjoy the city's parks."],
+    ["Rome","Italy","Europe","city","An ancient city filled with historic architecture and Italian culture.","Colosseum, Trevi Fountain, Vatican City","Discover ancient ruins and enjoy traditional Italian cuisine."],
+    ["Barcelona","Spain","Europe","city","A lively coastal city known for architecture, beaches and culture.","Sagrada Familia, Park Güell, Barceloneta Beach","Explore historic streets and relax by the sea."],
+    ["Amsterdam","Netherlands","Europe","city","A charming city known for canals, cycling and museums.","Canal Belt, Rijksmuseum, Anne Frank House","Take canal tours and explore neighbourhood cafes."],
+    ["Santorini","Greece","Europe","beach","A Greek island known for white buildings and blue sea views.","Oia, Fira, Red Beach","Enjoy coastal views and discover traditional villages."],
+    ["Athens","Greece","Europe","city","A historic city where ancient landmarks meet modern life.","Acropolis, Parthenon, Plaka","Explore ancient history and Greek food."],
+    ["Venice","Italy","Europe","city","A unique city built around canals and historic architecture.","Grand Canal, Rialto Bridge, St Mark's Square","Discover the canals and historic neighbourhoods."],
+    ["Interlaken","Switzerland","Europe","mountain","A beautiful destination surrounded by the Swiss Alps.","Lake Thun, Lake Brienz, Harder Kulm","Enjoy mountain scenery and outdoor activities."],
+    ["Zermatt","Switzerland","Europe","mountain","A mountain village famous for views of the Matterhorn.","Matterhorn, Gornergrat, Sunnegga","Explore alpine landscapes and mountain trails."],
+    ["Nice","France","Europe","beach","A sunny French Riviera city with a beautiful coastline.","Promenade des Anglais, Old Town, Castle Hill","Relax by the Mediterranean and explore local markets."],
+    ["Prague","Czech Republic","Europe","city","A picturesque city filled with historic buildings and bridges.","Charles Bridge, Prague Castle, Old Town Square","Explore medieval streets and riverside views."],
+    ["Berlin","Germany","Europe","city","A modern capital with a fascinating history and culture.","Brandenburg Gate, Berlin Wall, Museum Island","Visit museums and explore creative neighbourhoods."],
+    ["Lisbon","Portugal","Europe","city","A colourful coastal capital with historic streets and viewpoints.","Belém Tower, Alfama, Praça do Comércio","Ride historic trams and enjoy Portuguese food."],
+    ["Reykjavik","Iceland","Europe","city","A small capital surrounded by dramatic Icelandic landscapes.","Hallgrímskirkja, Blue Lagoon, Harpa","Discover Icelandic nature and local culture."],
+    ["Dubrovnik","Croatia","Europe","beach","A historic coastal city overlooking the Adriatic Sea.","City Walls, Old Town, Banje Beach","Explore the historic centre and coastline."],
+    ["Copenhagen","Denmark","Europe","city","A stylish city known for its harbour and design.","Nyhavn, Tivoli Gardens, Rosenborg Castle","Cycle around the city and explore Danish culture."],
+    ["Florence","Italy","Europe","city","A beautiful city known for Renaissance art and architecture.","Duomo, Uffizi Gallery, Ponte Vecchio","Discover art galleries and Italian history."],
+    ["Edinburgh","United Kingdom","Europe","city","A historic Scottish capital with dramatic architecture.","Edinburgh Castle, Royal Mile, Arthur's Seat","Explore historic streets and scenic viewpoints."],
+    ["Bergen","Norway","Europe","mountain","A colourful harbour city surrounded by mountains and fjords.","Bryggen, Mount Fløyen, Fjord tours","Discover fjords and mountain scenery."],
+
+    ["Cape Town","South Africa","Africa","beach","A coastal city surrounded by mountains and beautiful beaches.","Table Mountain, Camps Bay, Cape Point","Explore beaches, mountain trails and local markets."],
+    ["Johannesburg","South Africa","Africa","city","South Africa's largest city and a centre of culture and history.","Apartheid Museum, Constitution Hill, Maboneng","Discover South African history and urban culture."],
+    ["Durban","South Africa","Africa","beach","A warm coastal city known for beaches and ocean views.","Golden Mile, uShaka Marine World, Umhlanga","Enjoy the coastline and local food."],
+    ["Marrakech","Morocco","Africa","city","A colourful city filled with markets, gardens and architecture.","Jemaa el-Fnaa, Bahia Palace, Majorelle Garden","Explore traditional markets and Moroccan culture."],
+    ["Cairo","Egypt","Africa","city","A historic city near some of the world's most famous ancient monuments.","Pyramids of Giza, Egyptian Museum, Khan el-Khalili","Discover ancient Egyptian history."],
+    ["Nairobi","Kenya","Africa","city","A lively capital with wildlife experiences nearby.","Nairobi National Park, Karen Blixen Museum, Giraffe Centre","Explore nature and city attractions."],
+    ["Zanzibar City","Tanzania","Africa","beach","A historic island destination with beautiful Indian Ocean beaches.","Stone Town, Nungwi Beach, Prison Island","Enjoy island scenery and historic streets."],
+    ["Victoria Falls","Zimbabwe","Africa","mountain","A destination famous for one of the world's most impressive waterfalls.","Victoria Falls, Zambezi River, rainforest trails","Discover the waterfall and surrounding nature."],
+    ["Maasai Mara","Kenya","Africa","mountain","A famous wildlife reserve with wide open landscapes.","Mara River, wildlife reserves, savannah plains","Experience guided wildlife viewing."],
+    ["Accra","Ghana","Africa","city","A lively coastal capital with markets and cultural attractions.","Kwame Nkrumah Memorial Park, Labadi Beach, Makola Market","Discover Ghanaian culture and coastal life."],
+    ["Lagos","Nigeria","Africa","city","A busy coastal city known for entertainment and culture.","Lekki Conservation Centre, Tarkwa Bay, Nike Art Gallery","Explore art, beaches and local food."],
+    ["Seychelles","Seychelles","Africa","beach","An island paradise with clear water and beautiful beaches.","Anse Lazio, Beau Vallon, Vallée de Mai","Enjoy island scenery and coastal activities."],
+    ["Mauritius","Mauritius","Africa","beach","A tropical island known for lagoons and mountain landscapes.","Le Morne, Chamarel, Flic en Flac","Explore beaches, nature and local culture."],
+    ["Kigali","Rwanda","Africa","city","A clean and lively capital surrounded by green hills.","Kigali Genocide Memorial, Kimironko Market, Mount Kigali","Discover local history and city life."],
+    ["Addis Ababa","Ethiopia","Africa","city","A highland capital with museums and cultural landmarks.","National Museum, Holy Trinity Cathedral, Entoto","Explore Ethiopian history and cuisine."],
+
+    ["New York City","United States","North America","city","A famous city known for its skyline, entertainment and landmarks.","Times Square, Central Park, Statue of Liberty","Explore neighbourhoods, museums and restaurants."],
+    ["Los Angeles","United States","North America","city","A large coastal city famous for film, beaches and entertainment.","Hollywood Sign, Santa Monica Pier, Griffith Observatory","Discover beaches and entertainment attractions."],
+    ["Miami","United States","North America","beach","A sunny city known for beaches and colourful neighbourhoods.","South Beach, Wynwood Walls, Little Havana","Enjoy beaches and local culture."],
+    ["San Francisco","United States","North America","city","A coastal city famous for its bridges and hills.","Golden Gate Bridge, Alcatraz, Fisherman's Wharf","Explore waterfront areas and city viewpoints."],
+    ["Las Vegas","United States","North America","city","A desert city known for entertainment and impressive architecture.","Las Vegas Strip, Bellagio Fountains, Red Rock Canyon","Discover attractions and nearby desert scenery."],
+    ["Honolulu","United States","North America","beach","A tropical Hawaiian capital surrounded by beautiful beaches.","Waikiki Beach, Diamond Head, Hanauma Bay","Enjoy coastal scenery and island culture."],
+    ["Vancouver","Canada","North America","mountain","A coastal city surrounded by mountains and forests.","Stanley Park, Grouse Mountain, Granville Island","Explore parks, mountains and waterfront areas."],
+    ["Toronto","Canada","North America","city","Canada's largest city, known for its diverse culture.","CN Tower, Toronto Islands, Royal Ontario Museum","Discover neighbourhoods and city attractions."],
+    ["Banff","Canada","North America","mountain","A mountain town surrounded by the Canadian Rockies.","Lake Louise, Moraine Lake, Banff Gondola","Explore mountain landscapes and lakes."],
+    ["Montreal","Canada","North America","city","A cultural city with historic streets and lively neighbourhoods.","Old Montreal, Mount Royal, Notre-Dame Basilica","Enjoy food, architecture and festivals."],
+    ["Cancun","Mexico","North America","beach","A coastal destination known for white beaches and clear water.","Hotel Zone, Isla Mujeres, Playa Delfines","Enjoy the coast and nearby natural attractions."],
+    ["Mexico City","Mexico","North America","city","A large capital filled with history, food and culture.","Zócalo, Chapultepec, Frida Kahlo Museum","Explore museums and traditional neighbourhoods."],
+    ["Tulum","Mexico","North America","beach","A coastal destination known for beaches and historic ruins.","Tulum Ruins, Playa Paraíso, Gran Cenote","Discover coastal scenery and local history."],
+    ["Havana","Cuba","North America","city","A colourful city known for historic streets and architecture.","Old Havana, Malecón, El Capitolio","Explore historic neighbourhoods and waterfront views."],
+    ["Jasper","Canada","North America","mountain","A mountain destination surrounded by lakes and forests.","Maligne Lake, Athabasca Falls, Jasper SkyTram","Explore the Canadian Rockies."],
+
+    ["Rio de Janeiro","Brazil","South America","beach","A famous coastal city surrounded by mountains and beaches.","Christ the Redeemer, Copacabana, Sugarloaf Mountain","Enjoy beaches, viewpoints and Brazilian culture."],
+    ["Buenos Aires","Argentina","South America","city","A vibrant capital known for architecture and culture.","La Boca, Recoleta Cemetery, Plaza de Mayo","Discover historic streets and local food."],
+    ["Machu Picchu","Peru","South America","mountain","An ancient mountain settlement surrounded by dramatic scenery.","Machu Picchu, Sacred Valley, Inca Trail","Discover ancient history and mountain landscapes."],
+    ["Cusco","Peru","South America","mountain","A historic city in the Andes with Inca heritage.","Plaza de Armas, Sacsayhuamán, Sacred Valley","Explore history and nearby mountain scenery."],
+    ["Santiago","Chile","South America","city","A modern capital with views of the Andes.","Cerro San Cristóbal, Plaza de Armas, Sky Costanera","Explore city attractions and mountain viewpoints."],
+    ["Cartagena","Colombia","South America","beach","A colourful Caribbean city with historic streets.","Walled City, Castillo San Felipe, Playa Blanca","Explore historic architecture and beaches."],
+    ["Medellín","Colombia","South America","city","A lively city surrounded by green mountains.","Comuna 13, Plaza Botero, Parque Arví","Discover local culture and mountain scenery."],
+    ["Galápagos Islands","Ecuador","South America","beach","An island group known for unique wildlife and nature.","Santa Cruz, Tortuga Bay, Española Island","Discover wildlife and coastal landscapes."],
+    ["Quito","Ecuador","South America","mountain","A high-altitude capital with historic architecture.","Historic Centre, TelefériQo, Mitad del Mundo","Explore historic landmarks and mountain views."],
+    ["Florianópolis","Brazil","South America","beach","An island city with many beautiful beaches.","Joaquina Beach, Campeche Island, Lagoa da Conceição","Enjoy coastal scenery and outdoor activities."],
+    ["La Paz","Bolivia","South America","mountain","A high-altitude city surrounded by dramatic mountains.","Mi Teleférico, Valle de la Luna, Illimani views","Discover mountain landscapes and city culture."],
+
+    ["Tokyo","Japan","Asia","city","A modern capital combining technology, culture and tradition.","Shibuya Crossing, Tokyo Tower, Senso-ji","Explore neighbourhoods, food and technology."],
+    ["Kyoto","Japan","Asia","city","A historic Japanese city known for temples and gardens.","Fushimi Inari, Arashiyama, Kinkaku-ji","Discover traditional architecture and gardens."],
+    ["Osaka","Japan","Asia","city","A lively city known for food and entertainment.","Dotonbori, Osaka Castle, Universal Studios Japan","Enjoy local food and city attractions."],
+    ["Bali","Indonesia","Asia","beach","A tropical island known for beaches and green landscapes.","Uluwatu, Ubud, Nusa Penida","Explore beaches, temples and nature."],
+    ["Bangkok","Thailand","Asia","city","A busy capital with temples, markets and modern attractions.","Grand Palace, Wat Arun, Chatuchak Market","Discover temples and Thai cuisine."],
+    ["Phuket","Thailand","Asia","beach","An island destination with beautiful beaches and coastal scenery.","Patong Beach, Kata Beach, Phang Nga Bay","Explore beaches and island views."],
+    ["Singapore","Singapore","Asia","city","A modern city known for gardens and impressive architecture.","Gardens by the Bay, Marina Bay Sands, Sentosa","Explore gardens and city attractions."],
+    ["Dubai","United Arab Emirates","Asia","city","A modern city famous for architecture and desert scenery.","Burj Khalifa, Palm Jumeirah, Dubai Mall","Discover modern landmarks and desert landscapes."],
+    ["Maldives","Maldives","Asia","beach","An island nation known for clear water and tropical beaches.","Maafushi, Malé, coral reefs","Enjoy island scenery and marine environments."],
+    ["Hong Kong","China","Asia","city","A lively city combining impressive skylines and traditional culture.","Victoria Peak, Victoria Harbour, Mong Kok","Explore city views and local markets."],
+    ["Seoul","South Korea","Asia","city","A modern capital with historic palaces and entertainment.","Gyeongbokgung, N Seoul Tower, Bukchon Hanok Village","Discover Korean culture and modern city life."],
+    ["Kathmandu","Nepal","Asia","mountain","A historic city surrounded by the Himalayan region.","Boudhanath, Swayambhunath, Durbar Square","Explore temples and mountain culture."],
+    ["Pokhara","Nepal","Asia","mountain","A scenic city near the Annapurna mountain range.","Phewa Lake, Sarangkot, World Peace Pagoda","Enjoy lake views and mountain scenery."],
+    ["Manila","Philippines","Asia","city","A busy capital with historic sites and coastal attractions.","Intramuros, Rizal Park, Manila Bay","Explore historic neighbourhoods and local food."],
+    ["Palawan","Philippines","Asia","beach","An island destination known for lagoons and clear water.","El Nido, Coron, Puerto Princesa","Discover island landscapes and beaches."],
+    ["Kuala Lumpur","Malaysia","Asia","city","A modern capital with impressive towers and food culture.","Petronas Towers, Batu Caves, KL Tower","Explore markets and city landmarks."],
+    ["Doha","Qatar","Asia","city","A modern coastal city with museums and waterfront views.","Museum of Islamic Art, Souq Waqif, The Pearl","Discover architecture and cultural attractions."],
+    ["Jaipur","India","Asia","city","A colourful city known for palaces and historic buildings.","Hawa Mahal, Amber Fort, City Palace","Explore historic architecture and markets."],
+    ["Mumbai","India","Asia","city","A busy coastal city known for film, food and culture.","Gateway of India, Marine Drive, Elephanta Caves","Discover local food and historic attractions."],
+    ["Colombo","Sri Lanka","Asia","city","A coastal capital with markets and historic landmarks.","Galle Face Green, Gangaramaya Temple, Pettah Market","Explore the city and its coastline."],
+
+    ["Sydney","Australia","Oceania","beach","A famous harbour city with beaches and coastal walks.","Sydney Opera House, Bondi Beach, Harbour Bridge","Explore beaches and harbour attractions."],
+    ["Melbourne","Australia","Oceania","city","A cultural city known for art, food and architecture.","Federation Square, Queen Victoria Market, Great Ocean Road","Discover art, cafes and nearby coastlines."],
+    ["Gold Coast","Australia","Oceania","beach","A coastal destination known for beaches and outdoor activities.","Surfers Paradise, Burleigh Heads, Currumbin","Enjoy beaches and coastal scenery."],
+    ["Cairns","Australia","Oceania","beach","A tropical city near the Great Barrier Reef.","Great Barrier Reef, Kuranda, Daintree Rainforest","Discover tropical nature and marine life."],
+    ["Queenstown","New Zealand","Oceania","mountain","A scenic town surrounded by mountains and lakes.","Lake Wakatipu, Skyline Queenstown, The Remarkables","Explore mountain scenery and outdoor activities."],
+    ["Auckland","New Zealand","Oceania","city","A coastal city surrounded by harbours and volcanic landscapes.","Sky Tower, Waiheke Island, Mount Eden","Discover harbour views and local attractions."],
+    ["Wellington","New Zealand","Oceania","city","A compact capital known for its waterfront and culture.","Te Papa, Mount Victoria, Wellington Cable Car","Explore museums and coastal viewpoints."],
+    ["Bora Bora","French Polynesia","Oceania","beach","A tropical island known for clear lagoons and mountain scenery.","Matira Beach, Mount Otemanu, lagoon tours","Enjoy island scenery and ocean views."],
+    ["Fiji","Fiji","Oceania","beach","A tropical island destination with beautiful coastlines.","Mamanuca Islands, Coral Coast, Yasawa Islands","Discover beaches and island culture."],
+    ["Rotorua","New Zealand","Oceania","mountain","A destination known for geothermal landscapes and forests.","Te Puia, Redwoods Forest, Lake Rotorua","Discover natural landscapes and local culture."]
+];
+
+/* BUILD DESTINATION OBJECTS */
+
+const destinations = cityData.map((item, index) => ({
+    id: index,
+    name: item[0],
+    country: item[1],
+    continent: item[2],
+    category: item[3],
+    description: item[4],
+    attractions: item[5].split(", "),
+    activities: item[6],
+    image: getDestinationImage(item[0], item[3])
+}));
+
+function getDestinationImage(name, category) {
+    const imageGroups = {
+        beach: [
+            "photo-1507525428034-b723cf961d3e",
+            "photo-1519046904884-53103b34b206",
+            "photo-1500375592092-40eb2168fd21",
+            "photo-1499793983690-e29da59ef1c2"
+        ],
+        mountain: [
+            "photo-1464822759023-fed622ff2c3b",
+            "photo-1501785888041-af3ef285b470",
+            "photo-1470770841072-f978cf4d019e",
+            "photo-1464278533981-50106e6176b1"
+        ],
+        city: [
+            "photo-1519501025264-65ba15a82390",
+            "photo-1514565131-fce0801e5785",
+            "photo-1511818966892-d7d671e672a2",
+            "photo-1480714378408-67cf0d13bc1b"
+        ]
+    };
+
+    const group = imageGroups[category] || imageGroups.city;
+    const index = Math.abs(name.split("").reduce((sum, char) => sum + char.charCodeAt(0), 0)) % group.length;
+
+    return `https://images.unsplash.com/${group[index]}?auto=format&fit=crop&w=800&q=80`;
+}
+
+/* DESTINATION DISPLAY */
+
+const destinationGrid = document.getElementById("destinationGrid");
+const moreBtn = document.getElementById("moreBtn");
+const destinationCount = document.getElementById("destinationCount");
+const noResults = document.getElementById("noResults");
+
+let currentCategory = "all";
+let currentSearch = "";
+let visibleCount = 8;
+let filteredDestinations = [...destinations];
+
+function filterDestinations() {
+    filteredDestinations = destinations.filter(destination => {
+        const matchesCategory =
+            currentCategory === "all" ||
+            destination.category === currentCategory;
+
+        const searchText =
+            `${destination.name} ${destination.country} ${destination.continent}`.toLowerCase();
+
+        const matchesSearch = searchText.includes(currentSearch.toLowerCase());
+
+        return matchesCategory && matchesSearch;
+    });
+
+    visibleCount = 8;
+    renderDestinations();
+}
+
+function renderDestinations() {
+    destinationGrid.innerHTML = "";
+
+    const displayed = filteredDestinations.slice(0, visibleCount);
+
+    displayed.forEach(destination => {
+        const card = document.createElement("article");
+        card.className = "destination-card";
+
+        card.innerHTML = `
+            <img src="${destination.image}" alt="${destination.name}" loading="lazy">
+
+            <div class="destination-info">
+                <h3>${destination.name}</h3>
+                <p>${destination.country} · ${destination.continent}</p>
+                <span class="destination-tag">${destination.category}</span>
+            </div>
+
+            <div class="destination-details">
+                <p>${destination.description}</p>
+
+                <h4>Popular Attractions</h4>
+                <ul>
+                    ${destination.attractions.map(place => `<li>${place}</li>`).join("")}
+                </ul>
+
+                <h4>Things to Experience</h4>
+                <p>${destination.activities}</p>
+            </div>
+        `;
+
+        card.addEventListener("click", () => {
+            const details = card.querySelector(".destination-details");
+            details.classList.toggle("show");
+        });
+
+        destinationGrid.appendChild(card);
+    });
+
+    destinationGrid.appendChild(noResults);
+
+    noResults.style.display = filteredDestinations.length === 0 ? "block" : "none";
+
+    destinationCount.textContent =
+        `Showing ${displayed.length} of ${filteredDestinations.length} destinations`;
+
+    moreBtn.style.display =
+        visibleCount < filteredDestinations.length ? "inline-block" : "none";
+}
+
+/* SHOW MORE */
+
+moreBtn.addEventListener("click", () => {
+    visibleCount += 8;
+    renderDestinations();
+});
+
+/* CATEGORY FILTERS */
+
+document.querySelectorAll(".category-btn").forEach(button => {
+    button.addEventListener("click", () => {
+        document.querySelectorAll(".category-btn").forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+        currentCategory = button.dataset.category;
+
+        filterDestinations();
+    });
+});
+
+/* SEARCH */
+
+document.getElementById("heroSearch").addEventListener("submit", event => {
+    event.preventDefault();
+
+    currentSearch = document.getElementById("searchInput").value.trim();
+
+    filterDestinations();
+
+    document.getElementById("destinations").scrollIntoView({
+        behavior: "smooth"
+    });
+});
+
+/* ENQUIRY FORM */
+
+document.getElementById("enquiryForm").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const message = document.getElementById("formMessage");
+
+    message.style.display = "block";
+
+    event.target.reset();
+});
+
+/* INITIAL DISPLAY */
+
+renderDestinations();
+
+</script>
+
+</body>
+</html>
